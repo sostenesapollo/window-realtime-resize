@@ -3,25 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <title>Hello World!</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
-    />
-    <link rel="stylesheet" href="index.css" />
     <script defer src="render.js"></script>
   </head>
-  <body class="content">
-    <h1>⚡ Electron Screen Recorder</h1>
+  <body style="margin:0">
 
-    <video></video>
-
-    <button id="startBtn" class="button is-primary">Start</button>
-    <button id="stopBtn" class="button is-warning">Stop</button>
-
-    <hr />
-
+    <!-- create a border 1 px -->
+    <video id="video" style="width:300px;border:1px solid black;"></video>
+<br>
+    <input id="size" label="tamanho em px" type="number" value="300" style="max-width:60px">
     <button id="videoSelectBtn" class="button is-text">
-      Choose a Video Source
+      Escolher fonte de vídeo
     </button>
   </body>
 </html>

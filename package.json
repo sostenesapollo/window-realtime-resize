@@ -1,5 +1,6 @@
 {
   "name": "tron-forge",
+  "author": "Sostenes Apollo <sostenesapollo25@gmail.com>",
   "productName": "tron-forge",
   "version": "1.0.0",
   "description": "My Electron application description",
@@ -9,11 +10,23 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\""
+    "lint": "echo \"No linting configured\"",
+    "dist": "electron-builder"
   },
   "keywords": [],
   "author": "jeffd23",
   "license": "MIT",
+  "build": {
+    "appId": "com.sale2.dev",
+    "productName": "Sale2",
+    "win": {
+      "target": "nsis",
+      "icon": "static/icon.ico"
+    },
+    "directories": {
+      "output": "build/${version}"
+    }
+  },
   "config": {
     "forge": {
       "packagerConfig": {},
@@ -51,6 +64,8 @@
     "@electron-forge/maker-squirrel": "^6.0.0-beta.50",
     "@electron-forge/maker-zip": "^6.0.0-beta.50",
     "devtron": "^1.4.0",
-    "electron": "8.0.2"
+    "electron": "8.0.2",
+    "electron-packager": "^15.4.0",
+    "electron-builder": "^20.38.0"
   }
 }

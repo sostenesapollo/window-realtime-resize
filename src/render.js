@@ -8,23 +8,31 @@ const { dialog, Menu } = remote;
 let mediaRecorder; // MediaRecorder instance to capture footage
 const recordedChunks = [];
 
+function onchange (e) {
+  const {value} = e.target
+  console.log(value);
+  document.getElementById('video').style.width = value+'px'
+}  
+
+document.getElementById("size").addEventListener("change", onchange);
+
 // Buttons
 const videoElement = document.querySelector('video');
 
-const startBtn = document.getElementById('startBtn');
-startBtn.onclick = e => {
-  mediaRecorder.start();
-  startBtn.classList.add('is-danger');
-  startBtn.innerText = 'Recording';
-};
+// const startBtn = document.getElementById('startBtn');
+// startBtn.onclick = e => {
+//   mediaRecorder.start();
+//   startBtn.classList.add('is-danger');
+//   startBtn.innerText = 'Recording';
+// };
 
-const stopBtn = document.getElementById('stopBtn');
+// const stopBtn = document.getElementById('stopBtn');
 
-stopBtn.onclick = e => {
-  mediaRecorder.stop();
-  startBtn.classList.remove('is-danger');
-  startBtn.innerText = 'Start';
-};
+// stopBtn.onclick = e => {
+//   mediaRecorder.stop();
+//   startBtn.classList.remove('is-danger');
+//   startBtn.innerText = 'Start';
+// };
 
 const videoSelectBtn = document.getElementById('videoSelectBtn');
 videoSelectBtn.onclick = getVideoSources;
